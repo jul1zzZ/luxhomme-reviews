@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1110 560" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a7f78"/>
+    </marker>
+  </defs>
+  <rect width="1110" height="560" fill="#ffffff"/>
+  <style>
+    .box { fill: #faf6f2; stroke: #d9cbbf; stroke-width: 1.5; }
+    .ai { fill: #fbeee4; stroke: #c9875e; stroke-width: 2; }
+    .db { fill: #eef3f7; stroke: #8fa9bf; stroke-width: 1.5; }
+    .h { font-size: 15px; font-weight: 600; fill: #2b2522; }
+    .t { font-size: 12.5px; fill: #5c534d; }
+    .s { font-size: 12px; fill: #8a7f78; }
+    .ln { stroke: #8a7f78; stroke-width: 1.6; fill: none; }
+  </style>
+
+  <!-- планировщик -->
+  <rect x="460" y="30" width="410" height="54" rx="10" class="box" stroke-dasharray="5 4"/>
+  <text x="665" y="53" text-anchor="middle" class="h">Планировщик · раз в неделю, пн 10:00</text>
+  <text x="665" y="72" text-anchor="middle" class="t">cron / Task Scheduler → python -m review_digest run</text>
+  <path d="M460,57 H335 V148" class="ln" stroke-dasharray="5 4" marker-end="url(#a)"/>
+
+  <!-- основной поток -->
+  <rect x="20" y="150" width="190" height="110" rx="10" class="box"/>
+  <text x="115" y="180" text-anchor="middle" class="h">Источники</text>
+  <text x="115" y="205" text-anchor="middle" class="t">CSV-выгрузка отзывов</text>
+  <text x="115" y="224" text-anchor="middle" class="t">API WB / Ozon — план</text>
+
+  <rect x="240" y="150" width="190" height="110" rx="10" class="box"/>
+  <text x="335" y="180" text-anchor="middle" class="h">Загрузка · load</text>
+  <text x="335" y="205" text-anchor="middle" class="t">проверка полей и дат</text>
+  <text x="335" y="224" text-anchor="middle" class="t">дедупликация по id</text>
+
+  <rect x="460" y="150" width="190" height="110" rx="10" class="ai"/>
+  <text x="555" y="180" text-anchor="middle" class="h">Разметка · classify</text>
+  <text x="555" y="205" text-anchor="middle" class="t">Gemini + промпт v1</text>
+  <text x="555" y="224" text-anchor="middle" class="t">JSON-схема ответа</text>
+  <text x="555" y="243" text-anchor="middle" class="t">проверка тем и цитат</text>
+
+  <rect x="680" y="150" width="190" height="110" rx="10" class="box"/>
+  <text x="775" y="180" text-anchor="middle" class="h">Сводка · digest</text>
+  <text x="775" y="205" text-anchor="middle" class="t">неделя к прошлой</text>
+  <text x="775" y="224" text-anchor="middle" class="t">топ жалоб с цитатами</text>
+  <text x="775" y="243" text-anchor="middle" class="t">сигналы для команды</text>
+
+  <rect x="900" y="150" width="190" height="110" rx="10" class="box"/>
+  <text x="995" y="180" text-anchor="middle" class="h">Telegram</text>
+  <text x="995" y="205" text-anchor="middle" class="t">Bot API, HTML-разметка</text>
+  <text x="995" y="224" text-anchor="middle" class="t">чат маркетинга</text>
+  <text x="995" y="243" text-anchor="middle" class="t">и продукта</text>
+
+  <path d="M210,205 H238" class="ln" marker-end="url(#a)"/>
+  <path d="M430,205 H458" class="ln" marker-end="url(#a)"/>
+  <path d="M650,205 H678" class="ln" marker-end="url(#a)"/>
+  <path d="M870,205 H898" class="ln" marker-end="url(#a)"/>
+
+  <!-- хранилище -->
+  <rect x="240" y="330" width="630" height="84" rx="10" class="db"/>
+  <text x="555" y="358" text-anchor="middle" class="h">SQLite · data/reviews.db</text>
+  <text x="555" y="381" text-anchor="middle" class="t">reviews — отзывы  ·  labels — темы и тон, версия «модель|промпт»  ·  digests — что отправлено</text>
+  <text x="555" y="400" text-anchor="middle" class="s">повторный запуск размечает только новые отзывы</text>
+
+  <path d="M335,262 V328" class="ln" marker-end="url(#a)"/>
+  <text x="343" y="300" class="s">reviews</text>
+  <path d="M555,262 V328" class="ln" marker-start="url(#a)" marker-end="url(#a)"/>
+  <text x="563" y="300" class="s">новые отзывы → метки</text>
+  <path d="M775,262 V328" class="ln" marker-start="url(#a)" marker-end="url(#a)"/>
+  <text x="783" y="300" class="s">отзывы, метки → сводка</text>
+
+  <!-- контроль качества -->
+  <text x="20" y="450" class="s">КОНТРОЛЬ КАЧЕСТВА РАЗМЕТКИ</text>
+  <rect x="20" y="462" width="270" height="70" rx="10" class="box"/>
+  <text x="155" y="490" text-anchor="middle" class="h">gold_labels.csv</text>
+  <text x="155" y="512" text-anchor="middle" class="t">ручная разметка 48 отзывов</text>
+
+  <rect x="330" y="462" width="250" height="70" rx="10" class="box"/>
+  <text x="455" y="490" text-anchor="middle" class="h">evaluate</text>
+  <text x="455" y="512" text-anchor="middle" class="t">точность и полнота жалоб</text>
+
+  <rect x="620" y="462" width="250" height="70" rx="10" class="box"/>
+  <text x="745" y="490" text-anchor="middle" class="h">reports/eval_*.md</text>
+  <text x="745" y="512" text-anchor="middle" class="t">расхождения → правка промпта</text>
+
+  <path d="M290,497 H328" class="ln" marker-end="url(#a)"/>
+  <path d="M580,497 H618" class="ln" marker-end="url(#a)"/>
+  <path d="M455,416 V460" class="ln" marker-end="url(#a)"/>
+  <text x="463" y="443" class="s">labels</text>
+</svg>
