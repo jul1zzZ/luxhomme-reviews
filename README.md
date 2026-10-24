@@ -9,7 +9,7 @@
 Нужен Python 3.10+.
 
 ```bash
-git clone <repo> && cd luxhomme-reviews
+git clone https://github.com/jul1zzZ/luxhomme-reviews.git && cd luxhomme-reviews
 python -m venv .venv
 .venv\Scripts\activate            # Linux/macOS: source .venv/bin/activate
 pip install -r requirements.txt
