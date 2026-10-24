@@ -34,7 +34,7 @@
 
   <rect x="460" y="150" width="190" height="110" rx="10" class="ai"/>
   <text x="555" y="180" text-anchor="middle" class="h">Разметка · classify</text>
-  <text x="555" y="205" text-anchor="middle" class="t">Gemini + промпт v1</text>
+  <text x="555" y="205" text-anchor="middle" class="t">Gemini + промпт v2</text>
   <text x="555" y="224" text-anchor="middle" class="t">JSON-схема ответа</text>
   <text x="555" y="243" text-anchor="middle" class="t">проверка тем и цитат</text>
 

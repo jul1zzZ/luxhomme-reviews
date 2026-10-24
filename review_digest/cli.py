@@ -144,6 +144,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     # httpx (внутри google-genai) пишет в INFO полный URL запроса — прячем.
     logging.getLogger("httpx").setLevel(logging.WARNING)
+    logging.getLogger("google_genai").setLevel(logging.WARNING)
     try:
         args.func(args, load_settings())
     except (ConfigError, IngestError, TelegramError, ValueError) as exc:

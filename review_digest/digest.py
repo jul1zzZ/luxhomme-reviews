@@ -250,7 +250,9 @@ def render_telegram(d: Digest) -> str:
             skus = ", ".join(f"{sku} ×{n}" if n > 1 else sku for sku, n in c.skus)
             lines.append(f"{i}. <b>{escape(topic_name(c.topic))}</b> — {c.count} ({escape(skus)})")
             for q in c.quotes:
-                lines.append(f"   <i>«{escape(q.text)}»</i> — {q.sku}, ★{q.rating}")
+                # Ёлочки внутри цитаты меняем на „лапки“, иначе получится «««…».
+                quote = q.text.replace("«", "„").replace("»", "“")
+                lines.append(f"   <i>«{escape(quote)}»</i> — {q.sku}, ★{q.rating}")
 
     lines += ["", "<b>По темам</b> <i>(упоминаний, из них 👎; к прошлой неделе)</i>"]
     for topic in sorted(TOPIC_KEYS, key=lambda t: (-cur.mentions[t], t)):

@@ -21,7 +21,7 @@ from .taxonomy import TOPIC_KEYS, taxonomy_for_prompt
 
 log = logging.getLogger(__name__)
 
-PROMPT_VERSION = "v1"
+PROMPT_VERSION = "v2"
 PROMPT_PATH = ROOT / "prompts" / f"classify_{PROMPT_VERSION}.md"
 
 RESPONSE_SCHEMA: dict[str, Any] = {

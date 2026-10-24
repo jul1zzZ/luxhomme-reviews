@@ -3,7 +3,7 @@ r001,positive,performance:+;ease_of_use:+,
 r002,negative,performance:-;noise:-,
 r003,mixed,performance:+;delivery:-,
 r004,positive,design:+;performance:+,
-r005,mixed,performance:0;noise:-,"«нормально» — нейтрально, не похвала"
+r005,negative,performance:0;noise:-,"«нормально» — нейтрально, не похвала; плюсов нет, значит negative (как r015); исправлено после v2"
 r006,positive,general:+,
 r007,positive,performance:+;ease_of_use:+,
 r008,mixed,general:+;price_value:-,претензия к материалам сформулирована как «за такие деньги»
@@ -12,8 +12,8 @@ r010,positive,performance:+;noise:0,«шумноват но терпимо»
 r011,positive,general:+;delivery:+,
 r012,positive,performance:+;ease_of_use:+,
 r013,negative,noise:-;performance:-,
-r014,positive,general:+;quality_build:+,
-r015,mixed,performance:0;ease_of_use:-,
+r014,positive,general:0;quality_build:+,«норм» — нейтрально по правилу промпта; исправлено после v1
+r015,negative,performance:0;ease_of_use:-,"плюсов нет (кофе «нормальный»), значит negative, а не mixed; исправлено после v1"
 r016,negative,quality_build:-,
 r017,positive,price_value:+;general:+,
 r018,positive,design:+,
@@ -21,7 +21,7 @@ r019,mixed,performance:+;noise:-,
 r020,positive,ease_of_use:+;quality_build:+,
 r021,mixed,general:+;delivery:-,
 r022,negative,app_connectivity:-,
-r023,positive,performance:+,
+r023,positive,performance:+;general:+,«Рекомендую» — general по правилу; исправлено после v1
 r024,negative,delivery:-;packaging:-,повреждение при доставке
 r025,positive,performance:+;packaging:+,книжка рецептов — комплектация
 r026,negative,app_connectivity:-,
@@ -33,13 +33,13 @@ r031,negative,delivery:-,сарказм
 r032,positive,general:+;delivery:+,
 r033,negative,app_connectivity:-;support:-,
 r034,mixed,general:+;ease_of_use:-,
-r035,positive,performance:+,
+r035,positive,performance:+;general:0,«полёт нормальный»; исправлено после v1
 r036,negative,delivery:-;packaging:-,
 r037,mixed,app_connectivity:-;performance:+,
-r038,positive,performance:+;price_value:0,
+r038,positive,performance:+;price_value:+,«оно того стоит» — похвала цене; исправлено после v1
 r039,positive,design:+;performance:+,
 r040,positive,support:+;quality_build:-,
-r041,negative,noise:+;app_connectivity:-;performance:-,
+r041,mixed,noise:+;app_connectivity:-;performance:-,"«Тихий» — заметный плюс, значит mixed; исправлено после v1"
 r042,negative,delivery:-,
 r043,negative,quality_build:-,
 r044,positive,general:+;ease_of_use:+,
